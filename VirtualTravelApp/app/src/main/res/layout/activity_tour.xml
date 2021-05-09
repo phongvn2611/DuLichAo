@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/ic_share"-->
+        <!--android:layout_gravity="end"-->
+        <!--android:layout_margin="8dp"/>-->
+    <com.facebook.share.widget.ShareButton
+        android:id="@+id/btShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="#2C48D1"
+        android:layout_margin="8dp"/>
+    <Spinner
+        android:id="@+id/spTourType"
+        style="@style/spinner_style"
+        android:prompt="@string/choose_tour"
+        android:entries="@array/tour_type"
+
+        >
+    </Spinner>
+    <TextView
+        android:id="@+id/tvTourInfor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="18sp"
+        android:layout_marginLeft="8dp"
+
+        />
+</LinearLayout>
