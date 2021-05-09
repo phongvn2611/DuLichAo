@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.virtualtravelapp"
+    android:installLocation="internalOnly"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VirtualTravelApp">
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="2881012138690358"/>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            tools:replace="android:theme"/>
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider2881012138690358"
+            android:exported="true" />
+
+        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6843926878275771~2070749431"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyC1YIZjkANlWIbujR14e7UBHI-Ff__t_44"/>
+        <activity android:name=".activity.WelcomeActivity"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="Du Lịch Ảo"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.SignupActivity"></activity>
+        <activity
+            android:name=".activity.IntroduceActivity"
+            android:label="Giới thiệu"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.DiaDanhActivity"
+            android:label="Địa Danh"
+            android:theme="@style/ThemeDiaDanh">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.DetailPlaceActivity"
+            android:label="Cô Tô"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.PlaceActivity"
+            android:label="Các điểm đi nổi tiếng"
+            android:theme="@style/ThemeDiaDanh"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activity.RestaurantActivity"
+            android:label="Ăn gì/Ở đâu"
+            android:theme="@style/ThemeDiaDanh"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activity.HotelActivity"
+            android:label="Nhà Nghỉ/Khách sạn"
+            android:theme="@style/ThemeDiaDanh"
+            android:windowSoftInputMode="stateHidden"></activity>
+        <activity
+            android:name=".activity.VehiclesActivity"
+            android:label="Phương tiện di chuyển"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.TourActivity"
+            android:label="Lịch trình"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".google.MapActivity"
+            android:label="Bản đồ"
+            android:theme="@style/ThemeDiaDanh">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.WeatherActivity"
+            android:label="Thời tiết"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.DetailVehicleActivity"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.DetailRetaurantActivity"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.DetailHotelActivity"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.DetailExp"
+            android:theme="@style/ThemeDiaDanh"></activity>
+        <activity
+            android:name=".activity.ToolsActivity"
+            android:theme="@style/ThemeDiaDanh"></activity>
+    </application>
+
+</manifest>

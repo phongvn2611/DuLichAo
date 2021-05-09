@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imVehicel"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/im_thumbnail"
+        android:layout_marginTop="16dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvVehicles"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_marginLeft="8dp"
+        android:text="Trên đảo Cát Bà có khá nhiều lựa chọn về phương tiện đi lại cho các bạn. Với những địa điểm gần và ngay quanh thị trấn bạn có thể thuê xe đạp đôi, xe điện. Với những địa điểm xa hơn các bạn có thể đi xe ôm hoặc thuê xe máy cho chủ động, với đoàn đông người các bạn cũng có thể đi taxi."/>
+    </ScrollView>
+
+</LinearLayout>
