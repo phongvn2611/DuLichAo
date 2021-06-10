@@ -9,16 +9,16 @@
     android:layout_height="150dp"
     android:background="@drawable/im_thumbnail"
     android:scaleType="centerCrop"/>
+
     <TextView
         android:id="@+id/tvDiaDanh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imDiaDanh"
+        android:background="#cccccc"
+        android:gravity="center"
         android:text="Cô Tô"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        android:layout_alignBottom="@+id/imDiaDanh"
-        android:gravity="center"
-        android:background="#cccccc"
-        />
+        android:textSize="16sp" />
 
 </RelativeLayout>

@@ -47,20 +47,6 @@ public class VehiclesActivity extends AppCompatActivity {
         } else {
             setAdapterListView(listVehicle);
         }
-
-        lvVehicles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long i) {
-                Intent iDetail = new Intent(VehiclesActivity.this, DetailVehicleActivity.class);
-                iDetail.putExtra("id", listVehicle.get(position).getId());
-//				iDetail.putExtra("image", listVehicle.get(position).getImage());
-//				iDetail.putExtra("detail", listVehicle.get(position).getDetail());
-//				iDetail.putExtra("name", listVehicle.get(position).getName());
-                startActivity(iDetail);
-            }
-        });
-
-
     }
 
     public void setAdapterListView(ArrayList<Vehicle> list) {

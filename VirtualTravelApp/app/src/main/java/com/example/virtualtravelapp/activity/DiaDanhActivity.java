@@ -20,7 +20,6 @@ import android.widget.TextView;
 import com.example.virtualtravelapp.R;
 import com.example.virtualtravelapp.adapter.ItemPagerAdapter;
 import com.example.virtualtravelapp.database.DBManager;
-import com.example.virtualtravelapp.google.MapActivity;
 import com.example.virtualtravelapp.model.DiaDanh;
 
 import java.io.InputStream;
@@ -39,10 +38,7 @@ public class DiaDanhActivity extends AppCompatActivity implements ViewPager.OnPa
     @BindView(R.id.tvAnUong) TextView tvAnUong;
     @BindView(R.id.tvNhaNghi) TextView tvNhaNghi;
     @BindView(R.id.tvPhuongTien) TextView tvPhuongTien;
-    @BindView(R.id.tvLichTrinh) TextView tvLichTrinh;
     @BindView(R.id.chkFavorite) CheckBox chkFavorite;
-    @BindView(R.id.tvMap) TextView tvMap;
-    @BindView(R.id.tvWeather) TextView tvWeather;
     @BindView(R.id.pager_introduction) ViewPager intro_image;
     @BindView(R.id.viewCountDots) LinearLayout viewCountDots;
     private int dotsCount;
@@ -64,19 +60,15 @@ public class DiaDanhActivity extends AppCompatActivity implements ViewPager.OnPa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diadanh);
         ButterKnife.bind(this);
-
-
         id_diadanh = getIntent().getIntExtra("id_diadanh", 1);
         db = new DBManager(this);
         diaDanh = db.getDiaDanhDetail(id_diadanh);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(diaDanh.getNameDiaDanh());
-        Log.d("TAGLIST", String.valueOf(listBmp));
         String image = diaDanh.getImDiaDanh();
         String[] array_image = image.split(";");
         imageResource = new String[]{array_image[0],array_image[1],array_image[2],array_image[3],array_image[4]};
-        Log.d("TAGimage", String.valueOf(imageResource));
         adapter = new ItemPagerAdapter(DiaDanhActivity.this, imageResource);
         intro_image.setAdapter(adapter);
         intro_image.setCurrentItem(0);
@@ -158,9 +150,6 @@ public class DiaDanhActivity extends AppCompatActivity implements ViewPager.OnPa
         tvAnUong.setOnClickListener(this);
         tvPhuongTien.setOnClickListener(this);
         tvNhaNghi.setOnClickListener(this);
-        tvLichTrinh.setOnClickListener(this);
-        tvMap.setOnClickListener(this);
-        tvWeather.setOnClickListener(this);
     }
 
     private void setUiPage() {
@@ -242,26 +231,6 @@ public class DiaDanhActivity extends AppCompatActivity implements ViewPager.OnPa
                 iHotel.putExtra("id_diadanh", id_diadanh);
                 startActivity(iHotel);
                 break;
-            case R.id.tvLichTrinh:
-                Intent iTour = new Intent(DiaDanhActivity.this, TourActivity.class);
-                iTour.putExtra("id_diadanh", id_diadanh);
-                iTour.putExtra("image", diaDanh.getImage_int());
-                iTour.putExtra("name", diaDanh.getNameDiaDanh());
-                startActivity(iTour);
-                break;
-            case R.id.tvMap:
-                Intent iMap = new Intent(DiaDanhActivity.this, MapActivity.class);
-                Log.d("+++", "id " + String.valueOf(id_diadanh) + " latlng " + latlng + " name " + name);
-                iMap.putExtra("name", diaDanh.getNameDiaDanh());
-                iMap.putExtra("latlng", diaDanh.getLatlng());
-                iMap.putExtra("zoom", 10);
-                startActivity(iMap);
-                break;
-            case R.id.tvWeather:
-                Intent iWeather = new Intent(DiaDanhActivity.this, WeatherActivity.class);
-                iWeather.putExtra("city", diaDanh.getCity());
-                startActivity(iWeather);
-                break;
 
         }
     }
@@ -288,8 +257,6 @@ public class DiaDanhActivity extends AppCompatActivity implements ViewPager.OnPa
         protected void onProgressUpdate(Bitmap... values) {
             super.onProgressUpdate(values);
             listBmp.add(values[0]);
-//			Log.d("bytes2", String.valueOf(bitmap));
-            Log.d("list", String.valueOf(listBmp));
         }
 
         @Override

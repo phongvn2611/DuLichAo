@@ -3,24 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/edtSignupName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#f44336"
+        android:backgroundTint="#006df0"
         android:ems="10"
         android:hint="Họ và tên"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/edtSignupPhone"
@@ -29,7 +28,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#f44336"
+        android:backgroundTint="#006df0"
         android:ems="10"
         android:hint="Số điện thoại"
         android:inputType="textPersonName"
@@ -45,7 +44,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#f44336"
+        android:backgroundTint="#006df0"
         android:ems="10"
         android:hint="Tên đăng nhập"
         android:inputType="textPersonName"
@@ -61,7 +60,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#f44336"
+        android:backgroundTint="#006df0"
         android:ems="10"
         android:hint="Mật khẩu"
         android:inputType="textPassword"
@@ -72,23 +71,29 @@
 
     <Button
         android:id="@+id/btnSignupSignup"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
         android:text="Đăng ký"
-        app:layout_constraintEnd_toStartOf="@+id/btnSignupExit"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:backgroundTint="#006df0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSignupConfirmPassword" />
 
     <Button
         android:id="@+id/btnSignupExit"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="Thoát"
+        android:backgroundTint="#006df0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSignupConfirmPassword" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignupSignup" />
 
     <EditText
         android:id="@+id/edtSignupEmail"
@@ -97,7 +102,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#f44336"
+        android:backgroundTint="#006df0"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -113,7 +118,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:backgroundTint="#f44336"
+        android:backgroundTint="#006df0"
         android:ems="10"
         android:hint="Xác nhận mật khẩu"
         android:inputType="textPassword"
@@ -121,4 +126,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSignupPassword" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

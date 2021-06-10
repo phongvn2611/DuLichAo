@@ -74,17 +74,6 @@ public class PlaceActivity extends AppCompatActivity {
 
         }
 
-        lvPlace.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long i) {
-	            listPlace = db.getPlaceId(id);
-                Intent iDetail = new Intent(PlaceActivity.this, DetailPlaceActivity.class);
-				iDetail.putExtra("id", listPlace.get(position).getId());
-                startActivity(iDetail);
-            }
-        });
-
-
     }
 
     public void setAdapterListView(ArrayList<Place> list) {

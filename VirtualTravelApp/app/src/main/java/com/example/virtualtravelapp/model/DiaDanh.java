@@ -9,6 +9,22 @@ public class DiaDanh {
 	private String city;
 	private int regions;
 	private int favotite;
+
+	public DiaDanh() {
+
+	}
+
+	public DiaDanh(int idDiaDanh, String nameDiaDanh, String imDiaDanh, String image_int, String latlng, String city, int regions, int favotite) {
+		this.idDiaDanh = idDiaDanh;
+		this.nameDiaDanh = nameDiaDanh;
+		this.imDiaDanh = imDiaDanh;
+		this.image_int = image_int;
+		this.latlng = latlng;
+		this.city = city;
+		this.regions = regions;
+		this.favotite = favotite;
+	}
+
 	public int getIdDiaDanh() {
 		return idDiaDanh;
 	}

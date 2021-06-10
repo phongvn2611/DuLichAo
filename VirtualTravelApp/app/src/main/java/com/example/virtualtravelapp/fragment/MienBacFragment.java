@@ -24,6 +24,7 @@ import com.example.virtualtravelapp.adapter.DiaDanhAdapter;
 import com.example.virtualtravelapp.database.DBManager;
 import com.example.virtualtravelapp.model.DiaDanh;
 import com.example.virtualtravelapp.widget.RecyclerTouchListener;
+//import com.example.virtualtravelapp.widget.RecyclerTouchListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -52,7 +53,6 @@ public class MienBacFragment extends Fragment {
 		db = new DBManager(getContext());
 		//set text change
 		textChange();
-//		db.openDataBase();
 		listDiaDanh = db.getDiaDanhID(1);
 
 		initViews();

@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.virtualtravelapp.R;
 import com.example.virtualtravelapp.database.DBManager;
+import com.example.virtualtravelapp.fragment.AccountFragment;
+import com.example.virtualtravelapp.model.User;
 
 public class LoginActivity extends AppCompatActivity {
     Button btnLoginLogin, btnLoginSignup;
@@ -34,9 +36,16 @@ public class LoginActivity extends AppCompatActivity {
         else {
             database.openDataBase();
             int check = database.checkLogin(username, password);
+            User user = database.getUserByUsername(username);
             if (check == 1) {
                 Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Username", username);
+                bundle.putString("NameOfUser", user.getName());
+                bundle.putInt("IdGroup", user.getIdGroup());
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
             else {
                 Toast.makeText(LoginActivity.this, "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();

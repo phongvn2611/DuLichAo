@@ -9,6 +9,9 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.virtualtravelapp.fragment.AccountFragment;
+import com.example.virtualtravelapp.fragment.AdminFragment;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -20,9 +23,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.virtualtravelapp.R;
@@ -30,8 +35,6 @@ import com.example.virtualtravelapp.database.DBManager;
 import com.example.virtualtravelapp.fragment.DiaDanhFragment;
 import com.example.virtualtravelapp.fragment.ExpFragment;
 import com.example.virtualtravelapp.fragment.FavoriteFragment;
-import com.example.virtualtravelapp.fragment.SOSFragment;
-import com.example.virtualtravelapp.fragment.ToolsFragment;
 import com.example.virtualtravelapp.model.DiaDanh;
 import com.example.virtualtravelapp.model.Hotel;
 import com.example.virtualtravelapp.model.Place;
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 	String imString = "";
 	Bitmap bitmap;
 	static int i = 1;
-	static int idVehicel = 1;
+	static int idVehicle = 1;
 	static int idPlace = 1;
 	static int idHotel = 1;
 	static int idDiadanh = 1;
@@ -83,13 +86,9 @@ public class MainActivity extends AppCompatActivity {
 		setUpToolbar();
 		setUpNavDrawer();
 		startFragment(new DiaDanhFragment());
-
 		//Database
 		db = new DBManager(this);
 		db.openDataBase();
-
-
-//		bo thuoc tinh default black icon
 		navigationView.setItemIconTintList(null);
 		navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 			@Override
@@ -108,17 +107,13 @@ public class MainActivity extends AppCompatActivity {
 						startFragment(new ExpFragment());
 						drawerLayout.closeDrawers();
 						return true;
-					case R.id.nav_sos:
+					case R.id.nav_admin:
 						drawerLayout.closeDrawers();
-						Bundle bundle = new Bundle();
-						bundle.putInt("TAG", 1);
-						SOSFragment fragment = new SOSFragment();
-						fragment.setArguments(bundle);
-						startFragment(fragment);
+						startFragment(new AdminFragment());
 						return true;
-					case R.id.nav_tools:
+					case R.id.nav_account:
 						drawerLayout.closeDrawers();
-						startFragment(new ToolsFragment());
+						startFragment(new AccountFragment());
 						return true;
 					case R.id.nav_update:
 						drawerLayout.closeDrawers();
@@ -129,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 						showDialogInfo();
 						return true;
 					case R.id.nav_send_mail:
-						Intent emailIntent = new Intent("android.intent.action.SENDTO", Uri.fromParts("mailto", "hungmx94@gmail.com", null));
+						Intent emailIntent = new Intent("android.intent.action.SENDTO", Uri.fromParts("mailto", "ngocphongstudent2611@gmail.com", null));
 						emailIntent.putExtra("android.intent.extra.SUBJECT", "Phản hồi");
 						startActivity(Intent.createChooser(emailIntent, "Phản hồi"));
 						break;
@@ -139,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
 						Toast.makeText(MainActivity.this, "Đăng xuất thành công", Toast.LENGTH_SHORT).show();
 						finish();
 						break;
-
 				}
 				return false;
 			}
@@ -160,6 +154,16 @@ public class MainActivity extends AppCompatActivity {
 				@Override
 				public void onClick(View v) {
 					drawerLayout.openDrawer(GravityCompat.START);
+					Bundle bundle = getIntent().getExtras();
+					int idGroup = bundle.getInt("IdGroup");
+					Menu navAdmin = navigationView.getMenu();
+					if (idGroup == 2) {
+						navAdmin.findItem(R.id.nav_admin).setVisible(false);
+					}
+					String nameDrawer = bundle.getString("NameOfUser");
+					View headerNav = navigationView.getHeaderView(0);
+					TextView tvNameHeader = (TextView) headerNav.findViewById(R.id.tv_DrawerHeaderName);
+					tvNameHeader.setText(nameDrawer);
 				}
 			});
 
@@ -199,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
 		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("Thông tin")
 				.setMessage(Html.fromHtml("<p><strong>App du lịch ảo</strong></p>\n" +
-						"<p>Version 1.0</p>\n" +
 						"<p><span>Nguyễn Hoàng Huy - 18110122</span></p>\n" +
 						"<p><span>Nguyễn Thu Ngân - 18110161</span></p>\n" +
 						"<p><span>Võ Ngọc Phong - 18110174</span></p>"));
@@ -312,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
 			Log.d("TAG-image", values[0]);
 			String image;
 			Vehicle vehicle = new Vehicle();
-			vehicle.setId(idVehicel++);
+			vehicle.setId(idVehicle++);
 			image = values[0];
 			vehicle.setImage(image);
 			db.editVehicle(vehicle);

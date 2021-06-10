@@ -5,6 +5,7 @@
               android:layout_height="match_parent"
     android:layout_margin="8dp">
 <TextView
+    android:id="@+id/tvTitleIntro"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Intro"
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textColor="#000"
-        android:text="Test"
+        android:text="Địa điểm này chưa có lời giới thiệu"
         />
     </ScrollView>
 </LinearLayout>

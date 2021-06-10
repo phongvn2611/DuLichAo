@@ -61,17 +61,6 @@ public class RestaurantActivity extends AppCompatActivity {
         } else {
             setAdapterListView(listRestaurant);
         }
-        lvPlace.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//				listPlace = db.getPlaceId(id);
-
-                Intent iDetail = new Intent(RestaurantActivity.this, DetailRetaurantActivity.class);
-                iDetail.putExtra("id", listRestaurant.get(position).getId());
-                startActivity(iDetail);
-
-            }
-        });
     }
 
     public void setAdapterListView(ArrayList<Restaurant> list) {

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:weightSum="7">
+
+    <TextView
+        android:id="@+id/tv_AdminDiaDanhLocation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="2"
+        android:text="Địa danh"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="28sp"
+        android:textColor="#000"></TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_AdminDiaDanhEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sửa"
+            android:textSize="18sp"
+            android:backgroundTint="#006df0"
+            android:layout_gravity="center"></Button>
+        <Button
+            android:id="@+id/btn_AdminDiaDanhDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Xóa"
+            android:textSize="18sp"
+            android:backgroundTint="#006df0"
+            android:layout_gravity="center"></Button>
+    </LinearLayout>
+
+</LinearLayout>

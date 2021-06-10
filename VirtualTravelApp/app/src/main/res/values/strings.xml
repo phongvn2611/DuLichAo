@@ -36,5 +36,7 @@ Từ Long Xuyên bạn có thể đi: khu tưởng niệm bác Tôn, đi Thoại
     <string name="start">BẮT ĐẦU</string>
     <string name="next">TIẾP TỤC</string>
     <string name="skip">BỎ QUA</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

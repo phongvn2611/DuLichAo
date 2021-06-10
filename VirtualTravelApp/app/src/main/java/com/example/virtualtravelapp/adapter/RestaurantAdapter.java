@@ -90,29 +90,7 @@ public class RestaurantAdapter extends BaseAdapter{
 			}
 		}
 	}
-//	public class HotelHolder{
-//		@BindView(R.id.imgRestaurant) ImageView imgRestaurant;
-//		@BindView(R.id.tvNameR) TextView tvNameR;
-//		@BindView(R.id.tvPhoneR) TextView tvPhoneR;
-//		public HotelHolder(View view){
-//			ButterKnife.bind(this,view);
-//		}
-//
-//		public void bind(Hotel hotel){
-//			tvNameR.setText(hotel.getName());
-//			tvPhoneR.setText(hotel.getPrice() + " VNĐ");
-////			imgRestaurant.setImageResource(hotel.getImage());
-//			boolean a = list.get(0).getImage().startsWith("/9j/");
-//			if (a) {
-//				imgRestaurant.setImageBitmap(base64toBmp(hotel.getImage()));
-//			}else {
-//				String[] image = (hotel.getImage()).split(";");
-////			new DownloadImageTask(holder.imgPlace).execute(list.get(position).getImage());
-//				PicassoClient.downloadImage(context, image[0], imgRestaurant);
-//
-//			}
-//		}
-//	}
+
 
 	public Bitmap base64toBmp(String encodedImage){
 		byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);

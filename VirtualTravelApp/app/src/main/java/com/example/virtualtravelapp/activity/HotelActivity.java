@@ -58,14 +58,6 @@ public class HotelActivity extends AppCompatActivity {
         } else {
             setAdapterListView(list);
         }
-        lvPlace.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent iDetail = new Intent(HotelActivity.this, DetailHotelActivity.class);
-                iDetail.putExtra("id", list.get(position).getId());
-                startActivity(iDetail);
-            }
-        });
     }
 
 //	public void loadListHotel() {

@@ -52,7 +52,6 @@ public class MienNamFragment extends Fragment {
 		ButterKnife.bind(this,view);
 		db = new DBManager(getContext());
 		textChange();
-//		db.openDataBase();
 		listDiaDanh = db.getDiaDanhID(3);
 		initViews();
 		recyclerView.addOnItemTouchListener(

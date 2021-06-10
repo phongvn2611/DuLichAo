@@ -15,17 +15,18 @@
             android:icon="@drawable/ic_exper"
             android:title="Kinh Nghiệm"/>
         <item
-            android:id="@+id/nav_sos"
-            android:icon="@drawable/ic_sos"
-            android:title="Khẩn Cấp"/>
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/tools"
-            android:title="Tiện ích khác"/>
+            android:id="@+id/nav_admin"
+            android:icon="@drawable/ic_star"
+            android:title="Admin"></item>
     </group>
+
 
     <item android:title="Tùy chọn">
         <menu>
+            <item
+                android:id="@+id/nav_account"
+                android:icon="@drawable/ic_account"
+                android:title="Chỉnh sửa thông tin"></item>
             <item
                 android:id="@+id/nav_update"
                 android:icon="@drawable/ic_update"

@@ -51,7 +51,6 @@ public class MienTrungFragment extends Fragment {
 		etSearch = (EditText) view.findViewById(R.id.etSearch);
 		ButterKnife.bind(this,view);
 		db = new DBManager(getContext());
-//		db.openDataBase();
 		textChange();
 		listDiaDanh = db.getDiaDanhID(2);
 		initViews();

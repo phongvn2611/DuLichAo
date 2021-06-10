@@ -46,14 +46,11 @@ public class DiaDanhAdapter extends RecyclerView.Adapter<DiaDanhAdapter.DiaDanhV
 	public void onBindViewHolder(DiaDanhViewHolder holder, int position) {
 		DiaDanh diaDanh = list.get(position);
 		holder.tvName.setText(diaDanh.getNameDiaDanh());
-//		holder.imImage.
 		boolean a = list.get(0).getImDiaDanh().startsWith("/9j/");
 		if (a) {
 			holder.imImage.setImageBitmap(decodeBase64(diaDanh.getImDiaDanh()));
 		}else {
 			String[] image = (diaDanh.getImDiaDanh()).split(";");
-//			new DownloadImageTask(holder.imgPlace).execute(list.get(position).getImage());
-//			PicassoClient.downloadImage(context, image[0], holder.imImage);
 			Glide.with(context)
 					.load(image[0])
 					.error(R.drawable.im_thumbnail)

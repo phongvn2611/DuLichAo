@@ -59,8 +59,6 @@ public class VehiclesAdapter extends BaseAdapter{
 		if (a) {
 			holder.imgPlace.setImageBitmap(base64toBmp(list.get(position).getImage()));
 		}else {
-//			new DownloadImageTask(holder.imgPlace).execute(list.get(position).getImage());
-//			PicassoClient.downloadImage(context, list.get(position).getImage(), holder.imgPlace);
 			Glide.with(context)
 					.load(list.get(position).getImage())
 					.error(R.drawable.im_thumbnail)
