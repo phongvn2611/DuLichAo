@@ -73,3 +73,6 @@ Thao tác trên giao diện
 - Đăng nhập vào hệ thống
 - Vào Menu --> Tài khoản
 - Nhập thông tin muốn thay đổi và Nhấn nút thay đổi
+Phiên bản 3.0 (8/6/2021)
+- Quản lý địa điểm du lịch
+- Khắc phục những lỗi phát sinh 
